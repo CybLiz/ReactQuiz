@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./global.module.css";
 
 export default function QuizComponent({ prompt, choices, selected, onSelect }) {
   return (
@@ -6,8 +7,14 @@ export default function QuizComponent({ prompt, choices, selected, onSelect }) {
       <h2>{prompt}</h2>
       <ul>
         {choices.map((choice) => (
-          <li key={choice.id}>
-            <label>
+          <li key={choice.id} onClick={() => onSelect(choice.id)}
+
+            // className={`choice ${selected === choice.id ? "selected" : ""}`}
+            className={`${styles.choice} ${selected === choice.id ? styles.selected : ""}`}
+
+
+          >
+            {/* <label>
               <input
                 type="radio"
                 name="quiz-choice"
@@ -16,7 +23,10 @@ export default function QuizComponent({ prompt, choices, selected, onSelect }) {
                 onChange={() => onSelect(choice.id)}
               />
               {choice.label}
-            </label>
+            </label> */}
+
+            {choice.label}
+
           </li>
         ))}
       </ul>

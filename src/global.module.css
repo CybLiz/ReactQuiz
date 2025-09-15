@@ -1,4 +1,18 @@
-.test{
-    border: 1px solid red;
-    border-color: aqua;
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.choice {
+  cursor: pointer;
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.choice.selected {
+  background-color: rgb(243, 243, 210); 
+  border-color: #0f5132;
+  font-weight: bold;
 }
